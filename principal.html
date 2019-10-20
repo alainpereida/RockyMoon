@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+<style>
+h5 {
+    display:inline;
+}
+#btInformacionNorita{
+    margin-top:2px;
+    font-size: 12px;
+    text-align: center;
+}
+
+#btReconocimientoNorita{
+    margin-top:2px;
+    height: 30px;
+    width:110px;
+    font-size: 12px;
+    text-align: center;
+}
+
+#btGaleriaNorita{
+    margin-top:2px;
+    height: 30px;
+    width:110px;
+    font-size: 12px;
+    text-align: center;
+}
+.rocasDisponibles{
+    height:280px;
+    width: 200px;
+    text-align: center;
+    border-radius: 25px;
+    border: 2px solid #1C2331;
+}
+#title {
+    color:white; 
+    padding-left: 20px;
+    font-size: 32px;
+}
+#btAbrir {
+    margin-left:200px;
+}
+.menuText{
+    color: white; 
+}
+.seccionPrincipal{
+    display:none;
+    margin-left: 210px;
+    margin-top: 90px;
+    padding-top:5px;
+}
+span {
+    color: white; 
+}
+.textOptions{
+    color:white;
+    font-size: 22px;
+}
+h3 {
+    color: white;
+    font-size: 24px;
+}
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.header {
+    height:90px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position:fixed;
+    background-color: #2E2E2E;
+    padding-left: 20px;
+}
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top:90px;
+  left: 0;
+  opacity: 0.9;
+  background-color: #2E2E2E;
+  padding-left:30px;
+}
+
+#lunares {
+  text-decoration: none;
+  font-size: 20px;
+  color: #eeeeee;
+  padding-left:15px;
+  display: block;
+}
+#terrestres {
+  text-decoration: none;
+  font-size: 20px;
+  color: #eeeeee;
+  padding-left:15px;
+  display: block;
+}
+
+.textOptions{
+    color:white; 
+    font-size: 18px;
+    padding-left:30px;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+#motto{
+  margin-left: 150px;
+  color:white; 
+  font-style: italic;
+}
+
+.galeria {
+  height: calc( 300px + 3em);
+  width: 260px;
+  margin:1em auto;
+  border: 1px solid #555;
+  position: relative;  
+}
+
+.galeria img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 3s;
+}
+
+.galeria input[type=radio] {
+  position: relative;
+  bottom: calc(-300px - 1.5em);
+  left: .5em;
+}
+
+.galeria input[type=radio]:nth-of-type(1):checked ~ img:nth-of-type(1) {
+  opacity: 1;
+}
+
+.galeria input[type=radio]:nth-of-type(2):checked ~ img:nth-of-type(2) {
+  opacity: 1;
+}
+
+.galeria input[type=radio]:nth-of-type(3):checked ~ img:nth-of-type(3) {
+  opacity: 1;
+}
+
+.galeria input[type=radio]:nth-of-type(4):checked ~ img:nth-of-type(4) {
+  opacity: 1;
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class = "header">
+    <nav>
+        <img src="./static/moon.png">
+        <a class = "navbar-brand" id ="title">Rocky Moon</a>
+        <br>
+        <a class = "motto" id = "motto"> To the Moon and back</a>
+    </nav>
+</div>
+<div id="mySidenav" class="sidenav">
+  <ul class = "list-unstyled components">
+    <h3 class="menuText">Rocas</h3>
+      <li class = "active">
+        <a id="lunares" href="#"  onclick="mostrarDisponibles()">Lunares</a>
+      </li>
+      <li>
+        <a id="terrestres">Terrestres</a>
+    </li>
+  </ul>
+</div>
+<div id ="seccionPrincipal" class = "seccionPrincipal">
+    <h4>Rocas Disponibles </h4>
+    <div class = "rocasDisponibles">
+        <h5>Norita</h5>
+        <input type="image"  src="/static/info.png" id ="btInformacionNorita"  data-toggle="modal" data-target="#myModal">
+        <img src="/static/norita/1.jpg">
+        <button type="button" id ="btGaleriaNorita" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalGaleria">Galería</button>
+        <a id = "btReconocimientoNorita" href="/descubre" class="btn btn-info" role="button">¡Explora!</a>
+    </div>
+</div>
+
+<!-- Modal para informacion -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Información</h4>    
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+            <h2>Norita</h2>
+            <p>Materiales</p>
+            <ul>
+                <li>Plagioclasa  51.2%</li>
+                <li>Piroxeno ortorrómbico 48.2%</li>
+                <li>Clinopyroxene 0.01%</li>
+                <li>Silica 0.25%</li>
+                <li>Apatite 0.02%</li>
+                <li>Whitlockite 0.012%</li>
+            </ul>
+      </div>
+      <div class="modal-footer">
+        <a href="https://www.lpi.usra.edu/lunar/samples/atlas/compendium/78235.pdf?fbclid=IwAR1_1v4tvgHs3F45Eja51lrCdXAUA4z9KB3rEvKNqs_9G4C79xX6F8n1H1w">Consulta: www.lpi.usra.edu</a>
+      </div>
+    </div>
+  </div>  
+</div>
+  <!--Modal para galeria-->
+  <div id="modalGaleria" class="modal fade" role="dialog">
+    <div class = "modal-dialog">
+      <div class = "modal-content">
+        <div class = "modal-header">
+          <h4 class = "modal-title">Galería</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class = "modal-body">
+          <div class = "galeria">
+            <div class ="radioButtons">
+              <input type="radio" name="navegacion" id="_1" checked>
+              <input type="radio" name="navegacion" id="_2">
+              <input type="radio" name="navegacion" id="_3">
+              <input type="radio" name="navegacion" id="_4">
+              <img src="./static/norita/1.jpg" width="260" height="300" alt="Galeria CSS 1" />
+              <img src="./static/norita/2.jpg" width="260" height="300" alt="Galeria CSS 2" />
+              <img src="./static/norita/3.jpg" width="260" height="300" alt="Galeria CSS 3" />
+              <img src="./static/norita/4.jpg" width="260" height="300" alt="Galeria CSS 4" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+    function mostrarDisponibles() {
+      document.getElementById('seccionPrincipal').style.display = 'block'
+    }
+</script>
+   
+</body>
+</html> 
